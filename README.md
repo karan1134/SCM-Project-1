@@ -9,3 +9,5 @@ Programs relate to patterns have contributions from the other contributers of my
       2.Mansi Saini
 Programs related to mathematical problems is based on
       1.How can we get the inverse of a matrix.
+      2.How can we get sum of diagonal of matrix.
+      3.How can we get largest and second largest array
