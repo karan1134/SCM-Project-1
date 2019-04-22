@@ -1,5 +1,45 @@
 #include<iostream>
 using namespace std;
+
+/*-----------------------------mathematical functions-----------------------------------*/
+
+
+inverse(){                                          // inverse of a matrix 3 by 3
+  int mat[3][3], i, j;
+	float determinant = 0;
+
+	cout<<"Enter elements of matrix row wise:\n";
+	for(i = 0; i < 3; i++)
+		for(j = 0; j < 3; j++)
+           cin>>mat[i][j];
+
+	printf("\nGiven matrix is:");
+	for(i = 0; i < 3; i++){
+		cout<<"\n";
+
+		for(j = 0; j < 3; j++)
+			cout<<mat[i][j]<<"\t";
+	}
+
+	//finding determinant
+	for(i = 0; i < 3; i++)
+		determinant = determinant + (mat[0][i] * (mat[1][(i+1)%3] * mat[2][(i+2)%3] - mat[1][(i+2)%3] * mat[2][(i+1)%3]));
+
+	cout<<"\n\ndeterminant: "<<determinant;
+
+	cout<<"\n\nInverse of matrix is: \n";
+	for(i = 0; i < 3; i++){
+		for(j = 0; j < 3; j++)
+			cout<<((mat[(j+1)%3][(i+1)%3] * mat[(j+2)%3][(i+2)%3]) - (mat[(j+1)%3][(i+2)%3] * mat[(j+2)%3][(i+1)%3]))/ determinant<<"\t";
+
+		cout<<"\n";
+	}
+
+}
+
+
+
+/*------------------------------fun pattern functions-----------------------------------*/
 int starglass(){                             //The Star hourglass
 
    int i, j, s, nos = 0;
@@ -42,7 +82,7 @@ int starglass(){                             //The Star hourglass
 
 
 
-void pattern2()                             //The Empty Hourglass
+void pattern2()                             //The Hourglass
 {
     int i,j;
     int n=7;
@@ -426,8 +466,11 @@ int main()
              int choice;
              int option=-1;
              while(option)
-               {
-                 printf("1.Half Pyramid using *  \n2.Half Pyramid a using Numbers\n3.Half pyramid using Alphabets\n4.Inverted Half Pyramid using *\n5.Inverted half pyramid using *\n6.Inverted half pyramid using numbers\n7.Full pyramid using *\n8.Pyramid Using numbers\n9.Inverted full pyramid using *\n10.Pascal's Triangle\n11.Floyd's Triangle\n12.Diamond in rectangle\n13.The Empty Hourglass\n14.The Star hourglass\n15.Exit\n");
+               { cout<<"1.Fun patterns\n2.Mathematical Problems\n3.Exit\n";
+                 int x1;
+                 cin>>x1;
+                 if(x1==1){
+                 printf("1.Half Pyramid using *  \n2.Half Pyramid a using Numbers\n3.Half pyramid using Alphabets\n4.Inverted Half Pyramid using *\n5.Inverted half pyramid using *\n6.Inverted half pyramid using numbers\n7.Full pyramid using *\n8.Pyramid Using numbers\n9.Inverted full pyramid using *\n10.Pascal's Triangle\n11.Floyd's Triangle\n12.Diamond in rectangle\n13.The Hourglass\n14.The Star hourglass\n15.Exit\n");
                  printf("Enter your choice :- ");
                  scanf("%d",&choice);
                  switch(choice)
@@ -463,7 +506,25 @@ int main()
                  }
                  fflush(stdin);
                  printf("To continue press 1\nTo exit press 0.\n -  ");
+               }
+               else if(x1==2){
+                 cout<<"1.Inverse of a matrix\n2.Exit"<<endl;
+                 cout<<"Enter your choice: ";
+                 cin>>choice;
+                 switch(choice){
+                   case 1: inverse();
+                           break;
+                   
+                 }
+                 fflush(stdin);
+                 cout<<"To continue press 1\nTo exit press 0.\n - "<<endl;;
+               }
+               else if(x1==3)
+                 break;
+               else
+                 continue;
                  scanf("%d",&option);
                }
+
                return 0;
            }
