@@ -1,6 +1,48 @@
 #include<iostream>
 using namespace std;
-void pattern2()                             //The Hourglass
+int starglass(){                             //The Star hourglass
+
+   int i, j, s, nos = 0;
+   for (i = 9; i >= 1; (i = i - 2)) {
+    for (s = nos; s >= 1; s--) {
+     cout<<("  ");
+    }
+    for (j = 1; j <= i; j++) {
+     if ((i % 2) != 0 && (j % 2) != 0) {
+      cout<<'*';
+     } else {
+      cout<<"  ";
+     }
+    }
+    cout<<endl;
+    nos++;
+   }
+   nos = 3;
+   for (i = 3; i <= 9; (i = i + 2)) {
+  for (s = nos; s >= 1; s--) {
+     cout<<"  ";
+    }
+    for (j = 1; j <= i; j++) {
+
+     if ((i % 2) != 0 && (j % 2) != 0) {
+      cout<<'*';
+     } else {
+      cout<<"  ";
+     }
+    }
+    nos--;
+    cout<<endl;
+   }
+   return 0;
+  }
+
+
+
+/*-------------------------------------------------------------*/
+
+
+
+void pattern2()                             //The Empty Hourglass
 {
     int i,j;
     int n=7;
@@ -385,7 +427,7 @@ int main()
              int option=-1;
              while(option)
                {
-                 printf("1.Half Pyramid using *  \n2.Half Pyramid a using Numbers\n3.Half pyramid using Alphabets\n4.Inverted Half Pyramid using *\n5.Inverted half pyramid using *\n6.Inverted half pyramid using numbers\n7.Full pyramid using *\n8.Pyramid Using numbers\n9.Inverted full pyramid using *\n10.Pascal's Triangle\n11.Floyd's Triangle\n12.Diamond in rectangle\n13.The Hourglass\n14.Exit\n");
+                 printf("1.Half Pyramid using *  \n2.Half Pyramid a using Numbers\n3.Half pyramid using Alphabets\n4.Inverted Half Pyramid using *\n5.Inverted half pyramid using *\n6.Inverted half pyramid using numbers\n7.Full pyramid using *\n8.Pyramid Using numbers\n9.Inverted full pyramid using *\n10.Pascal's Triangle\n11.Floyd's Triangle\n12.Diamond in rectangle\n13.The Empty Hourglass\n14.The Star hourglass\n15.Exit\n");
                  printf("Enter your choice :- ");
                  scanf("%d",&choice);
                  switch(choice)
@@ -415,6 +457,8 @@ int main()
                    case 12: pattern();
                             break;
                    case 13: pattern2();
+                            break;
+                   case 14: starglass();
                             break;
                  }
                  fflush(stdin);
