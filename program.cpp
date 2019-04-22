@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-pattern2()                             //The Hourglass
+void pattern2()                             //The Hourglass
 {
     int i,j;
     int n=7;
