@@ -1,5 +1,32 @@
 #include<iostream>
 using namespace std;
+int fullpstar(){                                 //Program to print full pyramid using *
+  int space, rows;
+
+    cout <<"Enter number of rows: ";
+    cin >> rows;
+
+    for(int i = 1, k = 0; i <= rows; ++i, k = 0)
+    {
+        for(space = 1; space <= rows-i; ++space)
+        {
+            cout <<"  ";
+        }
+
+        while(k != 2*i-1)
+        {
+            cout << "* ";
+            ++k;
+        }
+        cout << endl;
+    }
+    return 0;
+}
+
+
+/*--------------------------------------------------------*/
+
+
 int invhnum(){                                   //Inverted half pyramid using numbers
   int rows;
 
@@ -141,7 +168,7 @@ int main()
              int option=-1;
              while(option)
                {
-                 printf("1.Half Pyramid using * , 2.Half Pyramid a using Numbers , 3.Half pyramid using Alphabets , 4.Inverted Half Pyramid using *, 5.Inverted half pyramid using *, 6.Inverted half pyramid using numbers, 7.Exit\n");
+                 printf("1.Half Pyramid using * , 2.Half Pyramid a using Numbers , 3.Half pyramid using Alphabets , 4.Inverted Half Pyramid using *, 5.Inverted half pyramid using *, 6.Inverted half pyramid using numbers, 7.Full pyramid using *, 8.Exit\n");
                  printf("Enter your choice :- ");
                  scanf("%d",&choice);
                  switch(choice)
@@ -157,6 +184,8 @@ int main()
                    case 5: invhpystar();
                            break;
                    case 6: invhnum();
+                           break;
+                   case 7: fullpstar();
                            break;
                  }
                  fflush(stdin);
