@@ -2,6 +2,30 @@
 using namespace std;
 
 /*-----------------------------mathematical functions-----------------------------------*/
+int sumofd(){
+  int i,j,n,d1=0,d2=0,a[5][5];
+	cout<<"Enter size of square matrix:"<<endl;
+	cin>>n;
+	cout<<"Enter Elements of matrix:\n";
+
+	for(i=0;i<n;++i)
+		for(j=0;j<n;++j)
+		{
+			cin>>a[i][j];
+			if(i==j)
+				d1+=a[i][j];
+			if((i+j)==(n-1))
+				d2+=a[i][j];
+		}
+
+	cout<<"\nFirst Diagonal Sum= "<<d1<<endl;
+	cout<<"\nSecond Diagonal Sum= "<<d2<<endl;
+
+	return 0;
+}
+
+
+/*------------------------------------------------------------------*/
 
 
 inverse(){                                          // inverse of a matrix 3 by 3
@@ -508,13 +532,14 @@ int main()
                  printf("To continue press 1\nTo exit press 0.\n -  ");
                }
                else if(x1==2){
-                 cout<<"1.Inverse of a matrix\n2.Exit"<<endl;
+                 cout<<"1.Inverse of a matrix\n2.Sum of diagonals of matrix\n"<<endl;
                  cout<<"Enter your choice: ";
                  cin>>choice;
                  switch(choice){
                    case 1: inverse();
                            break;
-                   
+                   case 2: sumofd();
+                           break;
                  }
                  fflush(stdin);
                  cout<<"To continue press 1\nTo exit press 0.\n - "<<endl;;
