@@ -1,5 +1,27 @@
 #include<iostream>
 using namespace std;
+
+int invhpystar(){                                 //Inverted half pyramid using *
+    int rows;
+
+    cout << "Enter number of rows: ";
+    cin >> rows;
+
+    for(int i = rows; i >= 1; --i)
+    {
+        for(int j = 1; j <= i; ++j)
+        {
+            cout << "* ";
+        }
+        cout << endl;
+    }
+}
+
+
+/*---------------------------------------------------------------*/
+
+
+
 int ihpyramid()                                   //inverted half pyramid using *
 {
     int rows;
@@ -15,7 +37,7 @@ int ihpyramid()                                   //inverted half pyramid using 
         }
         cout << endl;
     }
-    
+
     return 0;
 }
 
@@ -101,7 +123,7 @@ int main()
              int option=-1;
              while(option)
                {
-                 printf("1.Half Pyramid using * , 2.Half Pyramid a using Numbers , 3.Half pyramid using Alphabets , 4.Inverted Half Pyramid using *, 5.Exit\n");
+                 printf("1.Half Pyramid using * , 2.Half Pyramid a using Numbers , 3.Half pyramid using Alphabets , 4.Inverted Half Pyramid using *, 5.Inverted half pyramid using *, 6.Exit\n");
                  printf("Enter your choice :- ");
                  scanf("%d",&choice);
                  switch(choice)
@@ -113,6 +135,8 @@ int main()
                    case 3: hfusingalphabets();
                            break;
                    case 4: ihpyramid();
+                           break;
+                   case 5: invhpystar();
                            break;
                  }
                  fflush(stdin);
