@@ -27,6 +27,7 @@ return 0;
 
 
 
+
 int ifusings(){                             //Full inverted pyramid using *
   int rows;
 
