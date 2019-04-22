@@ -1,5 +1,128 @@
 #include<iostream>
 using namespace std;
+pattern2()                             //The Hourglass
+{
+    int i,j;
+    int n=7;
+    // This is upper half of pattern
+    for (i=1; i<=n; i++)
+    {
+        for (j=1; j<=(2*n); j++)
+        {
+            // Left part of pattern
+            if (i<j)
+                printf(" ");
+            else
+                printf("*");
+
+            // Right part of pattern
+            if (i<=((2*n)-j))
+                printf(" ");
+            else
+                printf("*");
+        }
+        printf("\n");
+    }
+
+    // This is lower half of pattern
+    for (i=1; i<=n; i++)
+    {
+        for (j=1;j<=(2*n);j++)
+        {
+            // Left part of pattern
+            if (i>(n-j+1))
+                printf(" ");
+            else
+                printf("*");
+
+            // Right part of pattern
+            if ((i+n)>j)
+                printf(" ");
+            else
+                printf("*");
+        }
+        printf("\n");
+    }
+}
+
+
+/*------------------------------------------------------------*/
+
+
+pattern()                                            //Diamond in rectangle
+{
+    int i,j;
+    int n=7;
+
+    // This is upper half of pattern
+    for (i=1; i<=n; i++)
+    {
+        for (j=1; j<=(2*n); j++)
+        {
+            // Left part of pattern
+            if (i>(n-j+1))
+                cout<<" ";
+            else
+                cout<<"*";
+
+            // Right part of pattern
+            if ((i+n)>j)
+                cout<<" ";
+            else
+                cout<<"*";
+        }
+        cout<<endl;;
+    }
+
+    // This is lower half of pattern
+    for (i=1; i<=n; i++)
+    {
+        for (j=1; j<=(2*n); j++)
+        {
+            // Right Part of pattern
+            if (i<j)
+                cout<<" ";
+            else
+                cout<<"*";
+
+            // Left Part of pattern
+            if (i<=((2*n)-j))
+                cout<<" ";
+            else
+                cout<<"*";
+        }
+        cout<<endl;
+    }
+}
+
+/*-------------------------------------------------*/
+
+
+
+int floydstri(){                            //Floyd's Triangle
+int rows, number = 1;
+
+  cout << "Enter number of rows: ";
+  cin >> rows;
+
+  for(int i = 1; i <= rows; i++)
+  {
+      for(int j = 1; j <= i; ++j)
+      {
+          cout << number << " ";
+          ++number;
+      }
+
+      cout << endl;
+  }
+
+  return 0;
+}
+
+
+/*---------------------------------------------------*/
+
+
 int pascaltri(){                           //Pascal's triangle
 int rows, number = 1;
 
@@ -262,7 +385,7 @@ int main()
              int option=-1;
              while(option)
                {
-                 printf("1.Half Pyramid using *  \n2.Half Pyramid a using Numbers\n3.Half pyramid using Alphabets\n4.Inverted Half Pyramid using *\n5.Inverted half pyramid using *\n6.Inverted half pyramid using numbers\n7.Full pyramid using *\n8.Pyramid Using numbers\n9.Inverted full pyramid using *\n10.Pascal's Triangle\n11.Exit\n");
+                 printf("1.Half Pyramid using *  \n2.Half Pyramid a using Numbers\n3.Half pyramid using Alphabets\n4.Inverted Half Pyramid using *\n5.Inverted half pyramid using *\n6.Inverted half pyramid using numbers\n7.Full pyramid using *\n8.Pyramid Using numbers\n9.Inverted full pyramid using *\n10.Pascal's Triangle\n11.Floyd's Triangle\n12.Diamond in rectangle\n13.The Hourglass\n14.Exit\n");
                  printf("Enter your choice :- ");
                  scanf("%d",&choice);
                  switch(choice)
@@ -286,6 +409,12 @@ int main()
                    case 9: ifusings();
                            break;
                    case 10: pascaltri();
+                            break;
+                   case 11: floydstri();
+                            break;
+                   case 12: pattern();
+                            break;
+                   case 13: pattern2();
                             break;
                  }
                  fflush(stdin);
