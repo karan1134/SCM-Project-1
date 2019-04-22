@@ -1,5 +1,33 @@
 #include<iostream>
 using namespace std;
+int pascaltri(){                           //Pascal's triangle
+int rows, number = 1;
+
+   cout << "Enter number of rows: ";
+   cin >> rows;
+
+   for(int i = 1; i <= rows; i++)
+   {
+       for(int j = 1; j <= i; ++j)
+       {
+           cout << number << " ";
+           ++number;
+       }
+
+       cout << endl;
+   }
+
+   return 0;
+
+return 0;
+}
+
+
+/*------------------------------------------------------------------*/
+
+
+
+
 int ifusings(){                             //Full inverted pyramid using *
   int rows;
 
@@ -234,7 +262,7 @@ int main()
              int option=-1;
              while(option)
                {
-                 printf("1.Half Pyramid using * , 2.Half Pyramid a using Numbers , 3.Half pyramid using Alphabets , 4.Inverted Half Pyramid using *, 5.Inverted half pyramid using *, 6.Inverted half pyramid using numbers, 7.Full pyramid using *, 8.Pyramid Using numbers 9.Inverted full pyramid using *, 10.Exit\n");
+                 printf("1.Half Pyramid using *  \n2.Half Pyramid a using Numbers\n3.Half pyramid using Alphabets\n4.Inverted Half Pyramid using *\n5.Inverted half pyramid using *\n6.Inverted half pyramid using numbers\n7.Full pyramid using *\n8.Pyramid Using numbers\n9.Inverted full pyramid using *\n10.Pascal's Triangle\n11.Exit\n");
                  printf("Enter your choice :- ");
                  scanf("%d",&choice);
                  switch(choice)
@@ -257,6 +285,8 @@ int main()
                            break;
                    case 9: ifusings();
                            break;
+                   case 10: pascaltri();
+                            break;
                  }
                  fflush(stdin);
                  printf("To continue press 1\nTo exit press 0.\n -  ");
