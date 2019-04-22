@@ -1,5 +1,32 @@
 #include<iostream>
 using namespace std;
+int ifusings(){                             //Full inverted pyramid using *
+  int rows;
+
+   cout << "Enter number of rows: ";
+   cin >> rows;
+
+   for(int i = rows; i >= 1; --i)
+   {
+       for(int space = 0; space < rows-i; ++space)
+           cout << "  ";
+
+       for(int j = i; j <= 2*i-1; ++j)
+           cout << "* ";
+
+       for(int j = 0; j < i-1; ++j)
+           cout << "* ";
+
+       cout << endl;
+   }
+
+   return 0;
+}
+
+
+/*-----------------------------------------------------------*/
+
+
 int punum(){                                //pyramid using numbers
   int rows, count = 0, count1 = 0, k = 0;
 
@@ -207,7 +234,7 @@ int main()
              int option=-1;
              while(option)
                {
-                 printf("1.Half Pyramid using * , 2.Half Pyramid a using Numbers , 3.Half pyramid using Alphabets , 4.Inverted Half Pyramid using *, 5.Inverted half pyramid using *, 6.Inverted half pyramid using numbers, 7.Full pyramid using *, 8.Pyramid Using numbers 9.Exit\n");
+                 printf("1.Half Pyramid using * , 2.Half Pyramid a using Numbers , 3.Half pyramid using Alphabets , 4.Inverted Half Pyramid using *, 5.Inverted half pyramid using *, 6.Inverted half pyramid using numbers, 7.Full pyramid using *, 8.Pyramid Using numbers 9.Inverted full pyramid using *, 10.Exit\n");
                  printf("Enter your choice :- ");
                  scanf("%d",&choice);
                  switch(choice)
@@ -227,6 +254,8 @@ int main()
                    case 7: fullpstar();
                            break;
                    case 8: punum();
+                           break;
+                   case 9: ifusings();
                            break;
                  }
                  fflush(stdin);
