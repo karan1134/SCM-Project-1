@@ -2,6 +2,42 @@
 using namespace std;
 
 /*-----------------------------mathematical functions-----------------------------------*/
+int landsl(){
+
+    int a[5][5],big1=1,big2=0,n,m,i,j;
+    cout<<"Enter no of rows and columns(max 5):";
+    cin>>m>>n;
+    cout<<"Enter the array:\n";
+
+    for(i=0;i<m;i++)
+        for(j=0;j<n;++j)
+            cin>>a[i][j];
+
+    for(i=0;i<m;++i)
+        for(j=0;j<n;++j)
+        {
+            if(a[i][j]>big1)
+                big1=a[i][j];
+        }
+
+    for(i=0;i<m;++i)
+        for(j=0;j<n;++j)
+        {
+            if(a[i][j]>big2&&a[i][j]<big1)
+                big2=a[i][j];
+        }
+
+    cout<<"\nLargest number:"<<big1;
+    cout<<"\nSecond largest number:"<<big2;
+
+    return 0;
+}
+
+
+/*-------------------------------------------------------------------*/
+
+
+
 int sumofd(){
   int i,j,n,d1=0,d2=0,a[5][5];
 	cout<<"Enter size of square matrix:"<<endl;
@@ -532,13 +568,15 @@ int main()
                  printf("To continue press 1\nTo exit press 0.\n -  ");
                }
                else if(x1==2){
-                 cout<<"1.Inverse of a matrix\n2.Sum of diagonals of matrix\n"<<endl;
+                 cout<<"1.Inverse of a matrix\n2.Sum of diagonals of matrix\n3.Largest and second largest number in a matrix"<<endl;
                  cout<<"Enter your choice: ";
                  cin>>choice;
                  switch(choice){
                    case 1: inverse();
                            break;
                    case 2: sumofd();
+                           break;
+                   case 3: landsl();
                            break;
                  }
                  fflush(stdin);
